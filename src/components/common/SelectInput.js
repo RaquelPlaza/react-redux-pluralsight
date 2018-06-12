@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-const SelectInput = ({name, label, onChange, placeholder, value, error}) => {
+const SelectInput = ({name, label, onChange, defaultOption, value, options, error}) => {
     return (
         <div className="form-group">
             <label htmlFor={name}>{label}</label>
@@ -22,13 +22,14 @@ const SelectInput = ({name, label, onChange, placeholder, value, error}) => {
     );
 };
 
-TextInput.PropTypes = {
+SelectInput.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
+    defaultOption: PropTypes.string,
     value: PropTypes.string,
-    error: PropTypes.string
+    error: PropTypes.string,
+    options: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default SelectInput;

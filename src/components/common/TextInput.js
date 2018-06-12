@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const TextInput = ({name, label, onChange, placeholder, value, error}) => {
     let wrapperClass = 'form-group';
@@ -23,7 +23,7 @@ const TextInput = ({name, label, onChange, placeholder, value, error}) => {
     );
 };
 
-TextInput.PropTypes = {
+TextInput.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
